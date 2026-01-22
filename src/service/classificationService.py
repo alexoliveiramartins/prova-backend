@@ -4,10 +4,18 @@ from openai import OpenAI
 
 load_dotenv()
 
+negative_words = ["ruim", "péssimo", "odeio", "odiei", "desapontado", "decepção"]
+positive_words = ["bom", "ótimo", "amei"]
+ 
 def classify(message: str):
+    message_words = message.lower().split()
     if '?' in message:
         return "Question"
-    else: return 0
+    elif any(word in message_words for word in negative_words):
+        return "Negative"
+    elif any(word in message_words for word in positive_words):
+        return "Positive"
+    else: return "null"
 
 def classifyLLM(message: str):
     client = OpenAI(

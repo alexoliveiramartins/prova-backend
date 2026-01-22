@@ -1,12 +1,11 @@
 from fastapi import APIRouter
-import os
 from openai import OpenAI
 from src.service.classificationService import classify, classifyLLM
 from src.models.message import Message
 
 router = APIRouter(prefix="/classification", tags=["classification"])
 
-@router.post("/")
+@router.post("/simple")
 async def classification(message: Message):
     response = classify(message.text)
     return {"classification": response}
