@@ -3,7 +3,7 @@
 Aplicativo de classificação simples de textos com uso de Heurísticas ou por meio de LLMs
 
 - Classificação heurística baseada em palavras-chave
-- Classificação via LLMs 
+- Classificação via LLMs com [api de inferência do Hugging Face](https://huggingface.co/inference/get-started)
 
 # Pré Requisitos
 
