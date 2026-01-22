@@ -9,9 +9,9 @@ router = APIRouter(prefix="/classification", tags=["classification"])
 @router.post("/simple")
 async def classification(message: Message, response_model=ClassificationResponse):
     response = classify(message.text)
-    return {"classification": response}
+    return {"Classificacao": response}
 
 @router.post("/llm")
 async def classification(message: Message, response_model=ClassificationResponse):
     response = classifyLLM(message.text)
-    return {"classification": response}
+    return {"Classificacao": response}
