@@ -28,10 +28,12 @@ def classifyLLM(message: str):
         messages=[
             {
                 "role": "user",
-                "content": f"Classify this text in a simple category, send only the category name: {message}"
+                "content": f"Classify this text in a simple category, send only the category name (one word) and the classification confidence in the format 'Clasification 0.00': {message}"
             }
         ],
     )
 
     print(completion.choices[0].message)
-    return completion.choices[0].message.content
+    return {"Categoria": completion.choices[0].message.content.split()[0],
+            "Confianca": completion.choices[0].message.content.split()[1]
+    }
