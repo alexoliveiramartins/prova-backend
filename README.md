@@ -37,7 +37,15 @@ http://127.0.0.1:8000
 
 # Exemplos de requisições
 
-## Endpoint de classificação simples com Heurísticas (/classification/simple)
+Formato do corpo da requisição (json)
+
+```json
+{
+    "text": "Tive uma péssima experiência"
+}
+```
+
+## (POST) Endpoint de classificação simples com Heurísticas (/classification/simple)
 
 ```bash
 curl --location 'http://127.0.0.1:8000/classification/simple' \
@@ -103,7 +111,7 @@ Saída esperada:
 }
 ```
 
-## Endpoint de classificação com LLMs (/classification/llm)
+## (POST) Endpoint de classificação com LLMs (/classification/llm)
 
 ```bash
 curl --location 'http://127.0.0.1:8000/classification/llm' \
@@ -118,8 +126,8 @@ Saída esperada:
 ```json
 {
     "Classificacao": {
-        "Categoria": "Question",
-        "Sentimento": "Neutral",
+        "Categoria": "Questao",
+        "Sentimento": "neutro",
         "Confianca": 0.95
     }
 }

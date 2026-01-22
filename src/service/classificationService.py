@@ -56,7 +56,7 @@ def classifyLLM(message: str):
             messages=[
                 {
                     "role": "user",
-                    "content": f"Classify this text in a simple category, send only the category name (one word), the sentiment (positive, negative, neutral or question) and the classification confidence in the format 'Clasification Sentiment 0.00': {message}"
+                    "content": f"Answer in brazillian portuguese: Classify this text in a simple category, send only the category name (one word), the sentiment (positive, negative, neutral or question) and the classification confidence in the format 'Clasification Sentiment 0.00': {message}"
                 }
             ],
         )
